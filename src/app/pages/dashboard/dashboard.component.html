@@ -1,0 +1,11 @@
+<h2>Lista de Productos</h2>
+
+<ul *ngIf="productos.length > 0; else cargando">
+  <li *ngFor="let producto of productos">
+    {{ producto.nombre }} - ${{ producto.precio }}
+  </li>
+</ul>
+
+<ng-template #cargando>
+  <p>Cargando productos o no hay conexión...</p>
+</ng-template>
